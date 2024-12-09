@@ -1,0 +1,11 @@
+Model Information:
+* title:	Socks mockup
+* source:	https://sketchfab.com/3d-models/socks-mockup-a994948bc5364da5a8b2dd0c1bb4142b
+* author:	Yorus01 (https://sketchfab.com/Yorus01)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Socks mockup" (https://sketchfab.com/3d-models/socks-mockup-a994948bc5364da5a8b2dd0c1bb4142b) by Yorus01 (https://sketchfab.com/Yorus01) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

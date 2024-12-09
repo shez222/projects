@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+  font-family: "Raleway", sans-serif !important;
+}
+
+/* Base styles for the sidebar */
+.sidebar {
+  transition: width 0.3s;
+}
+body{
+  overflow: hidden;
+/*   min-height: 110vh;  */
+}
+
+@media screen and (max-width: 768px) {
+  .screen-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Hide the sidebar on screens smaller than 768px */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.custom-modal .ant-modal-content {
+  background: rgba(255, 255, 255, 0.7); /* Change the alpha value for transparency */
+  border: none; /* Optional: remove border */
+}
+
+
+/* Add this to your CSS file */
+select {
+  font-family: 'Roboto', sans-serif;
+}
+
+option[value='Roboto'] {
+  font-family: 'Roboto', sans-serif;
+}
+
+option[value='Open Sans'] {
+  font-family: 'Open Sans', sans-serif;
+}
+
+option[value='Lato'] {
+  font-family: 'Lato', sans-serif;
+}

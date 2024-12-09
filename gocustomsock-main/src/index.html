@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cal</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .detox-page,
+      .detox-page html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      body.detox-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("background.jpg") center center/cover no-repeat fixed;
+        padding: 20px;
+      }
+      .dc-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 100%;
+        text-align: center;
+        animation: 1s ease-in-out dc-fadeIn;
+      }
+      @keyframes dc-fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .dc-h1 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .dc-form-group {
+        margin-bottom: 15px;
+      }
+      .dc-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #555;
+      }
+      .dc-button,
+      .dc-input,
+      .dc-select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        margin-bottom: 10px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .dc-input:focus,
+      .dc-select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        outline: 0;
+      }
+      .dc-button {
+        background-color: #0e4717;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+      .dc-button:hover {
+        background-color: #1f722b;
+        transform: translateY(-2px);
+      }
+      .dc-button:active {
+        background-color: #003f7f;
+        transform: translateY(1px);
+      }
+      .dc-margin {
+        margin-top: 8px;
+      }
+      @media (min-width: 768px) {
+        .dc-form-row {
+          display: flex;
+          justify-content: space-between;
+        }
+        .dc-form-group {
+          flex: 1;
+          margin-right: 10px;
+        }
+        .dc-form-group:last-child {
+          margin-right: 0;
+        }
+        .dc-container {
+          max-width: 600px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .dc-container {
+          max-width: 800px;
+        }
+        .dc-h1 {
+          font-size: 28px;
+        }
+        .dc-button,
+        .dc-input,
+        .dc-select {
+          font-size: 18px;
+        }
+      }
+      .dc-notification {
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+      }
+      .dc-notification.dc-success {
+        background-color: #4caf50;
+      }
+      .dc-notification.dc-error {
+        background-color: #80251f;
+      }
+      @media (max-width: 767px) {
+        .dc-notification {
+          padding: 10px;
+          font-size: 14px;
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dc-container">
+      <h3 class="dc-h3">DETOXIFICATION CALCULATOR</h3>
+      <div id="dc-notification"></div>
+      <div class="dc-form-row">
+        <div class="dc-form-group">
+          <label for="toxicity" class="dc-label"
+            >What is Your Toxicity Level?</label
+          >
+          <select id="toxicity" class="dc-select">
+            <option value="">Select Toxicity Level</option>
+            <option value="Low">Low (Minimal use)</option>
+            <option value="Moderate">Moderate (Occasional use)</option>
+            <option value="High">High (Regular use)</option>
+            <option value="Very High">Very High (Heavy use)</option>
+          </select>
+        </div>
+        <div class="dc-form-group">
+          <label for="experimentType" class="dc-label"
+            >What Type of Test?</label
+          >
+          <select id="experimentType" class="dc-select">
+            <option value="">Select Type of Test</option>
+            <option value="Blood">Blood</option>
+            <option value="Urine">Urine</option>
+            <option value="Hair">Hair</option>
+          </select>
+        </div>
+      </div>
+      <div class="dc-form-row">
+        <div class="dc-form-group">
+          <label for="weight" class="dc-label">Your Weight (lbs):</label>
+          <select id="weight" class="dc-select">
+            <option value="">Select Your Weight</option>
+            <option value="66 to 132">66 to 132 lbs</option>
+            <option value="134 to 176">134 to 176 lbs</option>
+            <option value="178 to 220">178 to 220 lbs</option>
+            <option value="222 to 264">222 to 264 lbs</option>
+            <option value="Over 264">Over 264 lbs</option>
+          </select>
+        </div>
+        <div class="dc-form-group">
+          <label for="exposureDays" class="dc-label"
+            >Exposure Level (in Days)</label
+          >
+          <select id="exposureDays" class="dc-select">
+            <option value="">Select Exposure Level</option>
+            <option value="2">Between 1 to 3 Days</option>
+            <option value="5">Between 4 to 6 Days</option>
+            <option value="8">Between 7 to 9 Days</option>
+            <option value="12">Between 10 to 14 Days</option>
+            <option value="17">Between 15 to 19 Days</option>
+            <option value="22">Between 20 to 24 Days</option>
+            <option value="26">More Than 25 Days</option>
+          </select>
+        </div>
+      </div>
+      <button class="dc-button" onclick="handleSubmit()">
+        CALCULATE MY RECOMMENDED PRODUCT
+      </button>
+    </div>
+
+    <script>
+      function handleSubmit() {
+        const experimentType = document.getElementById("experimentType").value;
+        const exposureDays = document.getElementById("exposureDays").value;
+        const weight = document.getElementById("weight").value;
+        const toxicity = document.getElementById("toxicity").value;
+        const notification = document.getElementById("dc-notification");
+
+        if (!experimentType || !exposureDays || !weight || !toxicity) {
+          notification.innerHTML =
+            '<div class="dc-notification dc-error">Please fill in all fields before proceeding.</div>';
+          return;
+        }
+
+        let url = "";
+
+        if (experimentType === "Blood" || experimentType === "Urine") {
+          if (exposureDays >= 1 && exposureDays <= 3) {
+            url = "https://www.testclear.com/1-day-detox-p3.aspx";
+          } else if (exposureDays >= 4 && exposureDays <= 6) {
+            url = "https://www.testclear.com/2-Day-Detox-P4.aspx";
+          } else if (exposureDays >= 7 && exposureDays <= 9) {
+            url = "https://www.testclear.com/3-Day-Detox-P6.aspx";
+          } else if (exposureDays >= 10 && exposureDays <= 14) {
+            url = "https://www.testclear.com/5-Day-Detox-P19.aspx";
+          } else if (exposureDays >= 15 && exposureDays <= 19) {
+            url = "https://www.testclear.com/7-Day-Detox-P11.aspx";
+          } else if (exposureDays >= 20 && exposureDays <= 24) {
+            url = "https://www.testclear.com/10-Day-Detox-P13.aspx";
+          } else if (exposureDays >= 25) {
+            url = "https://www.testclear.com/5-Day-Detox-P19.aspx";
+          }
+        } else if (experimentType === "Hair") {
+          url = "https://www.testclear.com/Testclear-Shampoo-P59.aspx";
+        }
+
+        if (url) {
+          notification.innerHTML =
+            '<div class="dc-notification dc-success">Redirecting you to a recommended product...</div>';
+          setTimeout(() => {
+            window.location.href = url;
+          }, 2000);
+        } else {
+          notification.innerHTML =
+            '<div class="dc-notification dc-error">An error occurred while calculating. Please try again.</div>';
+        }
+      }
+    </script>
+  </body>
+</html>
