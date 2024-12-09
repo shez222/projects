@@ -278,7 +278,7 @@ async function endRound() {
     // ** Corrected Section Ends Here **
 
     // Transfer winnings to winner by matching items
-    await transferWinnings(winnerParticipant.participant.user, winnerItems);
+    // await transferWinnings(winnerParticipant.participant.user, winnerItems);
 
     // Update the jackpot with the winner
     jackpot.status = 'completed';
